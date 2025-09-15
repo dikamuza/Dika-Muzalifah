@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Page</title>
+    <link rel="icon" type="image/x-icon" href="./assets/images/logoinovasi.png">
+    <link rel="stylesheet" href="assets/register.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Aplikasi Sistem Informasi<br>Human Resources</h1>
+        
+        <div class="input-container">
+            <!-- Input Email -->
+            <div class="input-group">
+                <span class="icon">&#128231;</span>
+                <input type="email" id="email" placeholder="Masukkan Email" required>
+            </div>
+
+            <!-- Input Username -->
+            <div class="input-group">
+                <span class="icon">&#128100;</span>
+                <input type="text" id="username" placeholder="Masukkan Username" required>
+            </div>
+
+            <!-- Input Password -->
+            <div class="input-group">
+                <span class="icon">&#128274;</span>
+                <input type="password" id="password" placeholder="Masukkan Password" required>
+                <small id="password-error" class="error-text" hidden>
+                    *Password panjangnya harus 8-16 karakter dan mengandung min. 1 huruf besar dan 1 angka atau simbol khusus
+                </small>
+            </div>
+        </div>
+
+        <!-- Tombol Register -->
+        <button class="register-button" id="register-button">Register</button>
+
+        <p class="login-prompt">Sudah punya akun? <a href="index.html">Login disini.</a></p>
+    </div>
+
+    <script src="assets/register.js" type="module"></script>
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistem Informasi Karyawan</title>
+  <link rel="icon" type="image/x-icon" href="./assets/images/logoinovasi.png">
+  <link rel="stylesheet" href="assets/dashboard.css">
+  <style>
+    /* Styling tambahan untuk tabel */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    table thead {
+      background-color: #005f73;
+      color: #ffffff;
+    }
+
+    table th, table td {
+      border: 1px solid #ddd;
+      text-align: left;
+      padding: 8px;
+    }
+
+    table tbody tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+
+    table tbody tr:hover {
+      background-color: #d3d3d3;
+    }
+
+    .struktur-organisasi {
+      overflow-x: auto; /* Supaya tabel responsif */
+    }
+
+    .struktur-organisasi table {
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+        <!-- Navbar -->
+      <nav class="navbar">
+          <div class="navbar-logo">
+              <img src="assets/images/logoinovasi.png" alt="Logo Inovasi Digital">
+              <div class="navbar-title">
+                  <h3>SISTEM INFORMASI</h3>
+                  <h3>KARYAWAN</h3>
+                  <h3>INOVASI DIGITAL</h3>
+              </div>
+          </div>
+          <div class="navbar-menu">
+              <a href="dashboard.html" class="navbar-item">Dashboard</a>
+              <a href="datamaster.html" class="navbar-item">Data Master</a>
+              <a href="datastaff.html" class="navbar-item">Data Staff</a>
+              <a href="datahuka.html" class="navbar-item">Data Hubungan Kerja</a>
+              <a href="datacuti.html" class="navbar-item">Data Cuti</a>
+          </div>
+          <div class="navbar-user">
+            <img src="assets/images/logout (1).png" alt="User Icon" class="user-icon" id="userDropdownBtn">
+            <div class="dropdown-menu" id="userDropdown">
+              <a href="#" class="dropdown-item" id="logoutBtn">
+                <img src="assets/images/logout.png" alt="Logout Icon" class="dropdown-icon">
+                Logout
+              </a>
+            </div>
+          </div>
+      </nav>
+
+  <div class="container">
+    <!-- Main content -->
+    <main class="dashboard">
+      <header>
+        <h1>
+          Database HR
+          <a href="datamaster.html" style="text-decoration: none; color: inherit;">/ Data Master</a>
+          <a href="asetkantor.html" style="text-decoration: none; color: #4C9F98;">/ Aset Perusahaan</a>
+        </h1>        
+      </header>
+
+      <div style="display: flex; justify-content: flex-end; margin-bottom: 10px;">
+        <button id="addUnitButton" class="btn btn-primary">Tambah Kategori</button>
+      </div>
+
+      <section> 
+        <div class="lokasikerja">
+            <table id="lokasikerja-table">
+              <thead>
+                <tr>
+                    <tr>
+                        <th>Kategori</th>
+                        <th>Nama Aset</th>
+                        <th>Detail</th>
+                        <th>Tahun Pengadaan</th>
+                        <th>Kondisi</th>
+                        <th>Yang Menyerahkan</th>
+                        <th>Yang Menerima</th>
+                        <th>Sanksi</th>
+                        <th>Dokumentasi</th>
+                        <th>Aksi</th>
+                </tr>
+              </thead>
+              <tbody id="lokasikerja-body">
+                <!-- Data akan dimuat di sini melalui lokasikerja.js -->
+              </tbody>
+            </table>
+            <div id="pagination-asetkantor"></div>
+          </div>
+	</section>
+    </main>
+  </div>
+
+    <script>
+    // Tampilkan/sematikan dropdown saat klik ikon user
+    const userBtn = document.getElementById('userDropdownBtn');
+    const dropdown = document.getElementById('userDropdown');
+
+    userBtn.addEventListener('click', () => {
+      dropdown.style.display = (dropdown.style.display === 'block') ? 'none' : 'block';
+    });
+
+    // Tutup dropdown jika klik di luar
+    document.addEventListener('click', function(event) {
+      if (!userBtn.contains(event.target) && !dropdown.contains(event.target)) {
+        dropdown.style.display = 'none';
+      }
+    });
+
+    // Logout
+    document.getElementById('logoutBtn').addEventListener('click', () => {
+      alert("Logout berhasil!");
+      window.location.href = "index.html"; // atau login.html
+    });
+  </script>
+
+  <script src="assets/navbar.js"></script>
+  <script src="assets/aset.js" type="module"></script>
+  <script src="assets/kategori.js" type="module"></script>
+</body>
+</html> 

@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistem Informasi Karyawan</title>
+  <link rel="icon" type="image/x-icon" href="./assets/images/logoinovasi.png">
+  <link rel="stylesheet" href="assets/dashboard.css">
+  <style>
+    .pagination-controls button {
+    margin: 0 5px;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+  }
+  .pagination-controls .btn-primary {
+    background-color: #007bff;
+    color: white;
+  }
+  .pagination-controls .btn-secondary {
+    background-color: #e0e0e0;
+    color: black;
+  }
+  </style>
+</head>
+<body>
+
+        <!-- Navbar -->
+      <nav class="navbar">
+          <div class="navbar-logo">
+              <img src="assets/images/logoinovasi.png" alt="Logo Inovasi Digital">
+              <div class="navbar-title">
+                  <h3>SISTEM INFORMASI</h3>
+                  <h3>KARYAWAN</h3>
+                  <h3>INOVASI DIGITAL</h3>
+              </div>
+          </div>
+          <div class="navbar-menu">
+              <a href="dashboard.html" class="navbar-item">Dashboard</a>
+              <a href="datamaster.html" class="navbar-item">Data Master</a>
+              <a href="datastaff.html" class="navbar-item">Data Staff</a>
+              <a href="datahuka.html" class="navbar-item">Data Hubungan Kerja</a>
+              <a href="datacuti.html" class="navbar-item">Data Cuti</a>
+          </div>
+          <div class="navbar-user">
+            <img src="assets/images/logout (1).png" alt="User Icon" class="user-icon" id="userDropdownBtn">
+            <div class="dropdown-menu" id="userDropdown">
+              <a href="#" class="dropdown-item" id="logoutBtn">
+                <img src="assets/images/logout.png" alt="Logout Icon" class="dropdown-icon">
+                Logout
+              </a>
+            </div>
+          </div>
+      </nav>
+
+    <!-- Hamburger Button -->
+    <div class="hamburger" onclick="toggleSidebar()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <img src="assets/images/logoinovasi.png" alt="Logo Inovasi Digital">
+        <h3>SISTEM INFORMASI</h3>
+        <h3>KARYAWAN</h3>
+        <h3>INOVASI DIGITAL</h3>
+      </div>
+      <a href="dashboard.html" class="sidebar-item">Dashboard</a>
+      <a href="datamaster.html" class="sidebar-item">Data Master</a>
+      <a href="datastaff.html" class="sidebar-item">Data Staff</a>
+      <a href="datahuka.html" class="sidebar-item">Data Hubungan Kerja</a>
+      <a href="datacuti.html" class="sidebar-item">Data Cuti</a>
+
+      <div class="sidebar-logout">
+        <a href="#" class="logout-link" id="logoutBtnSidebar">
+          <img src="assets/images/logout.png" alt="Logout Icon" class="dropdown-icon">
+        Logout
+      </a>
+      </div>
+    </div>
+
+    <!-- Main content -->
+    <main class="dashboard">
+      <header>
+        <h1>
+          Database HR
+          <a href="datastaff.html" style="text-decoration: none; color: #4C9F98;">/ Data Staff</a>
+        </h1>        
+        <div id="search-container" style="display: none;"></div>
+      </header>
+
+      <section>      
+        <!-- Tabs for different data categories -->
+        <div class="tabs">
+          <button class="tab-button active" onclick="switchTab('staff')">Staff</button>
+          <button class="tab-button" onclick="switchTab('data-pribadi')">Data Pribadi</button>
+          <button class="tab-button" onclick="switchTab('data-keluarga')">Data Keluarga</button>
+          <button class="tab-button" onclick="switchTab('data-pendidikan')">Data Pendidikan</button>
+        </div>
+
+        <div style="display: flex; justify-content: flex-end; margin-bottom: 10px;">
+          <button id="addRowButton" class="btn btn-primary">Tambah Data</button>
+        </div>
+
+        <div id="staff" class="tab-content active">
+          <h3>Staff</h3>
+          <div class="table-responsive">
+            <table>
+              <thead>
+                <tr>
+                  <th>No. Karyawan</th>
+                  <th>Nama Karyawan</th>
+                  <th>Jenis Kelamin</th>
+                  <th>Mulai Bergabung</th>
+                  <th>Status Kontrak</th>
+                  <th>No. Kontrak</th>
+                  <th>Masa Kontrak</th>                                
+                  <th>Awal Kontrak</th>
+                  <th>Akhir Kontrak</th>
+                  <th>Nama Unit</th>
+                  <th>Nama Bidang</th>
+                  <th>Jabatan</th>
+                  <th>Level</th>
+                  <th>Supervisor</th>
+                  <th>Lokasi Kerja</th>
+                  <th>Link</th>
+                  <th>Aksi</th>
+                </tr>
+              </thead>
+              <tbody id="staff-table-body"></tbody>
+            </table>
+          </div>
+          <div id="pagination"></div>
+          <div id="pagination-staff"></div>
+        </div>
+
+
+        <div id="data-pribadi" class="tab-content">
+          <h3>Data Pribadi</h3>
+          <div class="table-responsive">
+            <table>
+              <thead>
+                <tr>
+                  <th>Nama Lengkap</th>
+                  <th>Jenis Kelamin</th>
+                  <th>Tempat Lahir</th>
+                  <th>Tanggal Lahir</th>
+                  <th>Status Kawin</th>
+                  <th>Warga Negara</th>
+                  <th>Agama</th>
+                  <th>Tinggi Badan</th>
+                  <th>Berat Badan</th>
+                  <th>Golongan Darah</th>
+                  <th>Alamat Rumah</th>
+                  <th>Alamat Wali</th>
+                  <th>No. Telepon Wali</th>
+                  <th>No. Telepon</th>
+                  <th>Aksi</th>
+                </tr>
+              </thead>
+              <tbody id="data-pribadi-body"></tbody>
+            </table>
+          </div>
+          <div id="pagination-pribadi"></div>
+        </div>
+
+
+        <div id="data-keluarga" class="tab-content">
+          <h3>Data Keluarga</h3>
+          <div class="table-responsive">
+            <table>
+              <thead>
+                <tr>
+                  <th>Nama Karyawan</th>
+                  <th>Nama Istri/Suami</th>
+                  <th>Jenis Kelamin</th>
+                  <th>Tanggal Lahir</th>
+                  <th>Pendidikan Terakhir</th>
+                  <th>Pekerjaan</th>
+                  <th>Nama Anak</th>
+                  <th>Nama Ibu Kandung</th>
+                  <th>Aksi</th>
+                </tr>
+              </thead>
+              <tbody id="data-keluarga-body"></tbody>
+            </table>
+          </div>
+          <div id="pagination-keluarga"></div>
+        </div>
+
+        
+        <div id="data-pendidikan" class="tab-content">
+          <h3>Data Pendidikan</h3>
+          <div class="table-responsive">
+            <table>
+              <thead>
+                <tr>
+                  <th>Nama Karyawan</th>
+                  <th>Lembaga</th>
+                  <th>Tingkat Pendidikan</th>
+                  <th>Status Lulus</th>
+                  <th>Tahun Lulus</th>
+                  <th>Gelar</th>
+                  <th>Tempat</th>
+                  <th>Aksi</th>
+                </tr>
+              </thead>
+              <tbody id="data-pendidikan-body"></tbody>
+            </table>
+          </div>
+          <div id="pagination-pendidikan"></div>
+        </div>        
+      </section>
+    </main>
+  </div>
+
+  <script>
+    // Tampilkan/sematikan dropdown saat klik ikon user
+    const userBtn = document.getElementById('userDropdownBtn');
+    const dropdown = document.getElementById('userDropdown');
+
+    userBtn.addEventListener('click', () => {
+      dropdown.style.display = (dropdown.style.display === 'block') ? 'none' : 'block';
+    });
+
+    // Tutup dropdown jika klik di luar
+    document.addEventListener('click', function(event) {
+      if (!userBtn.contains(event.target) && !dropdown.contains(event.target)) {
+        dropdown.style.display = 'none';
+      }
+    });
+
+    const logoutBtnDesktop = document.getElementById('logoutBtn');
+    const logoutBtnMobile = document.getElementById('logoutBtnSidebar');
+
+    function handleLogout() {
+      alert("Logout berhasil!");
+      window.location.href = "index.html";
+    }
+
+    if (logoutBtnDesktop) logoutBtnDesktop.addEventListener('click', handleLogout);
+    if (logoutBtnMobile) logoutBtnMobile.addEventListener('click', handleLogout);
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+  <script src="assets/navbar.js"></script>
+  <script src="assets/addStaff.js" type="module"></script>
+  <script src="assets/addDP.js" type="module"></script>
+  <script src="assets/addDK.js" type="module"></script>
+  <script src="assets/addDPN.js" type="module"></script>
+</body>
+</html>

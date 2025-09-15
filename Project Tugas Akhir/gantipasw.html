@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Password Page</title>
+    <link rel="icon" type="image/x-icon" href="./assets/images/logoinovasi.png">
+    <link rel="stylesheet" href="assets/register.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Aplikasi Sistem Informasi<br>Human Resources</h1>
+        
+        <div class="input-container">
+            <div class="input-group">
+                <span class="icon">&#128231;</span>
+                <input type="text" id="email" placeholder="Masukkan Email" required>
+            </div>
+            <div class="input-group">
+                <span class="icon">&#128100;</span>
+                <input type="text" id="username" placeholder="Masukkan Username" required>
+                <small id="username-error" class="error-text"></small>
+            </div>
+            <div class="input-group">
+                <span class="icon">&#128274;</span>
+                <input type="password" id="password" placeholder="Masukkan Password" required>
+                <small id="password-error" class="error-text" hidden></small>
+            </div>            
+        </div>
+
+        <!-- Tombol Ganti Password -->
+        <button class="ganti-button" id="ganti-button">Ganti Password</button>
+    </div>
+
+    <script src="assets/gantipasw.js" type="module"></script>
+</body>
+</html>

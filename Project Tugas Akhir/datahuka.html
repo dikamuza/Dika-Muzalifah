@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistem Informasi Karyawan</title>
+  <link rel="icon" href="./assets/images/logoinovasi.png">
+  <link rel="stylesheet" href="assets/dashboard.css">
+</head>
+<body>
+  <!-- Navbar (versi desktop) -->
+  <nav class="navbar">
+    <div class="navbar-logo">
+      <img src="assets/images/logoinovasi.png" alt="Logo Inovasi Digital">
+      <div class="navbar-title">
+        <h3>SISTEM INFORMASI</h3>
+        <h3>KARYAWAN</h3>
+        <h3>INOVASI DIGITAL</h3>
+      </div>
+    </div>
+    <div class="navbar-menu">
+      <a href="dashboard.html" class="navbar-item">Dashboard</a>
+      <a href="datamaster.html" class="navbar-item">Data Master</a>
+      <a href="datastaff.html" class="navbar-item">Data Staff</a>
+      <a href="datahuka.html" class="navbar-item">Data Hubungan Kerja</a>
+      <a href="datacuti.html" class="navbar-item">Data Cuti</a>
+    </div>
+    <div class="navbar-user">
+      <img src="assets/images/logout (1).png" class="user-icon" id="userDropdownBtn">
+      <div class="dropdown-menu" id="userDropdown">
+        <a href="#" class="dropdown-item" id="logoutBtn">
+          <img src="assets/images/logout.png" class="dropdown-icon"> Logout
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hamburger untuk mobile -->
+  <div class="hamburger" onclick="toggleSidebar()">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+
+  <!-- Sidebar untuk mobile -->
+  <div class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <img src="assets/images/logoinovasi.png" alt="Logo Inovasi Digital">
+      <h3>SISTEM INFORMASI</h3>
+      <h3>KARYAWAN</h3>
+      <h3>INOVASI DIGITAL</h3>
+    </div>
+    <a href="dashboard.html" class="sidebar-item">Dashboard</a>
+    <a href="datamaster.html" class="sidebar-item">Data Master</a>
+    <a href="datastaff.html" class="sidebar-item">Data Staff</a>
+    <a href="datahuka.html" class="sidebar-item">Data Hubungan Kerja</a>
+    <a href="datacuti.html" class="sidebar-item">Data Cuti</a>
+    <div class="sidebar-logout">
+      <a href="#" class="logout-link" id="logoutBtnSidebar">
+        <img src="assets/images/logout.png" class="dropdown-icon"> Logout
+      </a>
+    </div>
+  </div>
+
+  <main class="dashboard">
+    <header>
+      <h1>Database HR <a href="datahuka.html" style="color:#4C9F98; text-decoration:none;">/ Data Hubungan Kerja</a></h1>
+      <div id="search-container" style="display: none;"></div>
+    </header>
+
+    <section>
+      <div class="tabs">
+        <button class="tab-button active" onclick="switchTab('kontrak')">Data Kontrak</button>
+        <button class="tab-button" onclick="switchTab('aset-kantor')">Data Aset</button>
+        <button class="tab-button" onclick="switchTab('training')">Data Training</button>
+      </div>
+
+      <div id="kontrak" class="tab-content active">
+        <h3>Kontrak</h3>
+        <div class="table-responsive">
+          <table>
+            <thead>
+              <tr>
+                <th>No. Karyawan</th>
+                <th>Nama Karyawan</th>
+                <th>Mulai Bergabung</th>
+                <th>Status Kontrak</th>
+                <th>No. Kontrak</th>
+                <th>Masa Kontrak</th>
+                <th>Awal Kontrak</th>
+                <th>Akhir Kontrak</th>
+                <th>Nama Unit</th>
+                <th>Nama Departemen</th>
+                <th>Jabatan</th>
+                <th>Level</th>
+                <th>Supervisor</th>
+                <th>Gaji Pokok</th>
+                <th>Tunjangan</th>
+                <th>Lokasi Kerja</th>
+                <th>Aksi</th>
+              </tr>
+            </thead>
+            <tbody id="data-kontrak-body"></tbody>
+          </table>
+        </div>
+        <div id="pagination-kontrak"></div>
+      </div>
+
+      <div id="aset-kantor" class="tab-content">
+        <h3>Aset Karyawan</h3>
+        <div class="table-responsive">
+          <table>
+            <thead>
+              <tr>
+                <th>No. Karyawan</th>
+                <th>Nama Karyawan</th>
+                <th>Kode Aset</th>
+                <th>No. Kategori</th>
+                <th>Nama Kategori</th>
+                <th>Nama Aset</th>
+                <th>Kondisi</th>
+                <th>Detail</th>
+                <th>Dokumentasi</th>
+                <th>Aksi</th>
+              </tr>
+            </thead>
+            <tbody id="aset-kantor-body"></tbody>
+          </table>
+        </div>
+        <div id="pagination-aset"></div>
+      </div>
+
+      <div id="training" class="tab-content">
+        <h3>Training</h3>
+        <div class="table-responsive">
+          <table>
+            <thead>
+              <tr>
+                <th>No. Karyawan</th>
+                <th>Nama Karyawan</th>
+                <th>Kode Training</th>
+                <th>Jenis Training</th>
+                <th>Nama Kategori</th>
+                <th>Topik Training</th>
+                <th>Lembaga Penyelenggara</th>
+                <th>Tanggal Mulai</th>
+                <th>Tanggal Selesai</th>
+                <th>Tempat Pelaksanaan</th>
+                <th>Sertifikat</th>
+                <th>Biaya</th>
+                <th>Aksi</th>
+              </tr>
+            </thead>
+            <tbody id="training-body"></tbody>
+          </table>
+        </div>
+        <div id="pagination-training"></div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    // Sidebar
+    function toggleSidebar() {
+      document.getElementById('sidebar').classList.toggle('active');
+    }
+
+    // Dropdown User
+    const userBtn = document.getElementById('userDropdownBtn');
+    const dropdown = document.getElementById('userDropdown');
+
+    userBtn.addEventListener('click', () => {
+      dropdown.style.display = (dropdown.style.display === 'block') ? 'none' : 'block';
+    });
+
+    document.addEventListener('click', function(event) {
+      if (!userBtn.contains(event.target) && !dropdown.contains(event.target)) {
+        dropdown.style.display = 'none';
+      }
+    });
+
+    // Logout Function
+    function handleLogout() {
+      alert("Logout berhasil!");
+      window.location.href = "index.html";
+    }
+
+    document.getElementById('logoutBtn')?.addEventListener('click', handleLogout);
+    document.getElementById('logoutBtnSidebar')?.addEventListener('click', handleLogout);
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+  <script src="assets/navbar.js"></script>
+  <script src="assets/addKontrak.js" type="module"></script>
+  <script src="assets/datahuka.js" type="module"></script>
+  <script src="assets/datatraining.js" type="module"></script>
+</body>
+</html>

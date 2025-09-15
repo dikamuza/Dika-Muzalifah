@@ -1,0 +1,1284 @@
+/* General styles */
+body {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #ffffff;
+  }
+  
+  .container {
+    display: flex;
+    height: 180vh;
+    width: 100%;
+  }
+  
+/* Navbar styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #425C5A;;
+    padding: 10px 30px;
+    border-radius: 10px;
+    font-family: Arial, sans-serif;
+}
+
+.navbar-logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.navbar-logo img {
+    height: 60px;
+}
+
+.navbar-title h3 {
+    margin: 0;
+    line-height: 1.2;
+    font-size: 14px;
+    color: #fff;
+}
+
+.navbar-menu {
+    display: flex;
+    gap: 20px;
+}
+
+.navbar-item {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.navbar-item:hover,
+.navbar-item.active {
+    color: #4C9F98;
+}
+
+.navbar-user {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+.user-icon {
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 45px;
+  right: 0;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+  z-index: 999;
+  width: 140px;
+}
+
+.dropdown-item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  color: #333;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.dropdown-item:hover {
+  background-color: #f5f5f5;
+}
+
+.dropdown-icon {
+  width: 20px;
+  margin-right: 10px;
+}
+  
+  .logo {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .menu {
+    flex-grow: 1;
+  }
+  
+  .menu-item {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Jarak antara ikon dan teks */
+    text-decoration: none;
+    color: #F3F3F3;
+    padding: 15px;
+    border-radius: 25px;
+    margin-bottom: 10px;
+    margin-top: 50px;
+    transition: background-color 0.3s, color 0.3s;
+  }
+
+  .menu-item img {
+    width: 20px; /* Sesuaikan ukuran ikon */
+    height: 20px;
+    display: inline-block;
+  }  
+
+  .menu-item:hover {
+    background-color: #ffffff;
+    color: #425C5A;
+  }
+  
+  .menu-item.active {
+    background-color: #ffffff;
+    color: #425C5A;
+  }
+  
+  /* Dashboard styles */
+  .dashboard {
+    flex-grow: 1;
+    padding: 20px;
+  }
+  
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  header h1 {
+    font-size: 24px;
+    color: #000000;
+  }
+  
+  header h1 span {
+    color: #4C9F98;
+  }
+  
+  .search-bar {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .search-bar input {
+    padding: 10px;
+    border: 1px solid rgba(66, 92, 90, 0.6);
+    border-radius: 5px;
+    color: #425C5A;
+  }
+  
+  .search-bar button {
+    padding: 10px 15px;
+    background-color: #4C9F98;
+    border: none;
+    border-radius: 5px;
+    color: #ffffff;
+    cursor: pointer;
+  }
+  
+  .search-bar button:hover {
+    background-color: #3B8B87;
+  }
+  
+  /* Card styles */
+  .cards {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .card {
+    flex: 1;
+    background-color: #425C5A;
+    color: #F3F3F3;
+    padding: 20px;
+    margin-top: 60px;
+    border-radius: 25px;
+    text-align: center;
+  }
+
+  .logo {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .logo img {
+    width: 100px; /* Sesuaikan ukuran gambar */
+    height: auto;
+    display: block;
+    margin: 0 auto 10px; /* Tambahkan jarak bawah dengan teks */
+  }
+
+  /* Custom Scroll Bar CSS */
+    ::-webkit-scrollbar {
+        width: 10px;
+    }
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #425C5A;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #425C5A;
+  }
+  
+    /* Tambahkan styling custom di sini */
+    .dashboard {
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 0 auto;
+      background: white;
+      border-radius: 8px;
+      overflow: hidden;
+      margin-top: 30px;
+    }
+    th, td {
+      text-align: center;
+      padding: 10px;
+      border: 1px solid #E0E0E0;
+    }
+    th {
+      background-color: #4C9F98;
+      color: white;
+    }
+    tr:nth-child(even) {
+      background-color: #F9F9F9;
+    }
+    .btn {
+      display: inline-block;
+      background-color: #4C9F98;
+      font-family: 'Poppins', sans-serif;
+      color: white;
+      padding: 10px 20px;
+      text-align: center;
+      text-decoration: none;
+      border-radius: 15px;
+      cursor: pointer;
+      margin-top: 6px;
+    }
+    .btn:hover {
+      background-color: #3A7F79;
+    }
+    .btn-container {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 10px;
+    }
+
+    .btn-edit, .btn-delete {
+      display: flex; /* Menggunakan flexbox untuk tata letak ikon */
+      align-items: center; /* Memposisikan ikon di tengah secara vertikal */
+      justify-content: center; /* Memposisikan ikon di tengah secara horizontal */
+      width: 40px; /* Lebar tombol */
+      height: 40px; /* Tinggi tombol */
+      border-radius: 50%; /* Membuat tombol berbentuk bulat */
+      border: none; /* Menghilangkan border */
+      cursor: pointer;
+      background-size: 20px 20px; /* Ukuran ikon */
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    
+    .btn-edit {
+      background-color: #4c7d9f;
+      background-image: url('images/edit.png'); /* Ikon untuk tombol edit */
+    }
+    
+    .btn-edit:hover {
+      background-color: #3a477f;
+    }
+
+.btn-save {
+  display: flex; /* Menggunakan flexbox untuk tata letak ikon */
+  align-items: center; /* Memposisikan ikon di tengah secara vertikal */
+  justify-content: center; /* Memposisikan ikon di tengah secara horizontal */
+  width: 40px; /* Lebar tombol */
+  height: 40px; /* Tinggi tombol */
+  border-radius: 50%; /* Membuat tombol berbentuk bulat */
+  border: none; /* Menghilangkan border */
+  cursor: pointer;
+  background-size: 20px 20px; /* Ukuran ikon */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #1fb836;
+  background-image: url('images/check.png'); /* Ikon untuk tombol edit */
+}
+
+.btn-save:hover {
+  background-color: #91cd69;
+}
+
+.save-aset-button {
+  display: flex; /* Menggunakan flexbox untuk tata letak ikon */
+  align-items: center; /* Memposisikan ikon di tengah secara vertikal */
+  justify-content: center; /* Memposisikan ikon di tengah secara horizontal */
+  width: 40px; /* Lebar tombol */
+  height: 40px; /* Tinggi tombol */
+  border-radius: 50%; /* Membuat tombol berbentuk bulat */
+  border: none; /* Menghilangkan border */
+  cursor: pointer;
+  background-size: 20px 20px; /* Ukuran ikon */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #1fb836;
+  background-image: url('images/check.png'); /* Ikon untuk tombol edit */
+}
+
+.save-aset-button:hover {
+  background-color: #91cd69;
+}
+
+.btn-cancel {
+  display: flex; /* Menggunakan flexbox untuk tata letak ikon */
+  align-items: center; /* Memposisikan ikon di tengah secara vertikal */
+  justify-content: center; /* Memposisikan ikon di tengah secara horizontal */
+  width: 40px; /* Lebar tombol */
+  height: 40px; /* Tinggi tombol */
+  border-radius: 50%; /* Membuat tombol berbentuk bulat */
+  border: none; /* Menghilangkan border */
+  cursor: pointer;
+  background-size: 20px 20px; /* Ukuran ikon */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #ffd500;
+  background-image: url('images/cancel.png'); /* Ikon untuk tombol edit */
+}
+
+.btn-cancel-aset {
+  display: flex; /* Menggunakan flexbox untuk tata letak ikon */
+  align-items: center; /* Memposisikan ikon di tengah secara vertikal */
+  justify-content: center; /* Memposisikan ikon di tengah secara horizontal */
+  width: 40px; /* Lebar tombol */
+  height: 40px; /* Tinggi tombol */
+  border-radius: 50%; /* Membuat tombol berbentuk bulat */
+  border: none; /* Menghilangkan border */
+  cursor: pointer;
+  background-size: 20px 20px; /* Ukuran ikon */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #ffd500;
+  background-image: url('images/cancel.png'); /* Ikon untuk tombol edit */
+}
+
+.btn-cancel-aset:hover {
+  background-color: #d2c85c;
+}
+
+.cancel-aset-button {
+  display: flex; /* Menggunakan flexbox untuk tata letak ikon */
+  align-items: center; /* Memposisikan ikon di tengah secara vertikal */
+  justify-content: center; /* Memposisikan ikon di tengah secara horizontal */
+  width: 40px; /* Lebar tombol */
+  height: 40px; /* Tinggi tombol */
+  border-radius: 50%; /* Membuat tombol berbentuk bulat */
+  border: none; /* Menghilangkan border */
+  cursor: pointer;
+  background-size: 20px 20px; /* Ukuran ikon */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #ffd500;
+  background-image: url('images/cancel.png'); /* Ikon untuk tombol edit */
+}
+
+.cancel-aset-button:hover {
+  background-color: #d2c85c;
+}
+
+.btn-cancel-cuti {
+  display: flex; /* Menggunakan flexbox untuk tata letak ikon */
+  align-items: center; /* Memposisikan ikon di tengah secara vertikal */
+  justify-content: center; /* Memposisikan ikon di tengah secara horizontal */
+  width: 40px; /* Lebar tombol */
+  height: 40px; /* Tinggi tombol */
+  border-radius: 50%; /* Membuat tombol berbentuk bulat */
+  border: none; /* Menghilangkan border */
+  cursor: pointer;
+  background-size: 20px 20px; /* Ukuran ikon */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #ffd500;
+  background-image: url('images/cancel.png'); /* Ikon untuk tombol edit */
+}
+
+.btn-cancel-cuti:hover {
+  background-color: #d2c85c;
+}
+
+.btn-cancel-riwayat {
+  display: flex; /* Menggunakan flexbox untuk tata letak ikon */
+  align-items: center; /* Memposisikan ikon di tengah secara vertikal */
+  justify-content: center; /* Memposisikan ikon di tengah secara horizontal */
+  width: 40px; /* Lebar tombol */
+  height: 40px; /* Tinggi tombol */
+  border-radius: 50%; /* Membuat tombol berbentuk bulat */
+  border: none; /* Menghilangkan border */
+  cursor: pointer;
+  background-size: 20px 20px; /* Ukuran ikon */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #ffd500;
+  background-image: url('images/cancel.png'); /* Ikon untuk tombol edit */
+}
+
+.btn-cancel-riwayat:hover {
+  background-color: #d2c85c;
+}
+
+.btn-cancel:hover {
+  background-color: #d2c85c;
+}
+
+.btn-cancel-training {
+  display: flex; /* Menggunakan flexbox untuk tata letak ikon */
+  align-items: center; /* Memposisikan ikon di tengah secara vertikal */
+  justify-content: center; /* Memposisikan ikon di tengah secara horizontal */
+  width: 40px; /* Lebar tombol */
+  height: 40px; /* Tinggi tombol */
+  border-radius: 50%; /* Membuat tombol berbentuk bulat */
+  border: none; /* Menghilangkan border */
+  cursor: pointer;
+  background-size: 20px 20px; /* Ukuran ikon */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #ffd500;
+  background-image: url('images/cancel.png'); /* Ikon untuk tombol edit */
+}
+
+.btn-cancel-training:hover {
+  background-color: #d2c85c;  
+}
+
+.btn-cancel-edit {
+  display: flex; /* Menggunakan flexbox untuk tata letak ikon */
+  align-items: center; /* Memposisikan ikon di tengah secara vertikal */
+  justify-content: center; /* Memposisikan ikon di tengah secara horizontal */
+  width: 40px; /* Lebar tombol */
+  height: 40px; /* Tinggi tombol */
+  border-radius: 50%; /* Membuat tombol berbentuk bulat */
+  border: none; /* Menghilangkan border */
+  cursor: pointer;
+  background-size: 20px 20px; /* Ukuran ikon */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #ffd500;
+  background-image: url('images/cancel.png'); /* Ikon untuk tombol edit */
+}
+
+.btn-cancel-edit:hover {
+  background-color: #d2c85c;  
+}
+
+.btn-success {
+  display: flex; /* Menggunakan flexbox untuk tata letak ikon */
+  align-items: center; /* Memposisikan ikon di tengah secara vertikal */
+  justify-content: center; /* Memposisikan ikon di tengah secara horizontal */
+  width: 40px; /* Lebar tombol */
+  height: 40px; /* Tinggi tombol */
+  border-radius: 50%; /* Membuat tombol berbentuk bulat */
+  border: none; /* Menghilangkan border */
+  cursor: pointer;
+  background-size: 20px 20px; /* Ukuran ikon */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #1fb836;
+  background-image: url('images/check.png'); /* Ikon untuk tombol edit */
+}
+
+.btn-success:hover {
+  background-color: #91cd69;
+}
+
+.btn-cancel:hover {
+  background-color: #d2c85c;
+}
+
+.edit-department-button {
+    display: flex; /* Menggunakan flexbox untuk tata letak ikon */
+    align-items: center; /* Memposisikan ikon di tengah secara vertikal */
+    justify-content: center; /* Memposisikan ikon di tengah secara horizontal */
+    width: 40px; /* Lebar tombol */
+    height: 40px; /* Tinggi tombol */
+    border-radius: 50%; /* Membuat tombol berbentuk bulat */
+    border: none; /* Menghilangkan border */
+    cursor: pointer;
+    background-size: 20px 20px; /* Ukuran ikon */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #4c7d9f;
+    background-image: url('images/edit.png'); /* Ikon untuk tombol edit */
+    margin-right: 10px;
+}    
+
+.edit-department-button:hover {
+    background-color: #3a477f;
+}
+
+.edit-unit-button {
+    display: flex; /* Menggunakan flexbox untuk tata letak ikon */
+    align-items: center; /* Memposisikan ikon di tengah secara vertikal */
+    justify-content: center; /* Memposisikan ikon di tengah secara horizontal */
+    width: 40px; /* Lebar tombol */
+    height: 40px; /* Tinggi tombol */
+    border-radius: 50%; /* Membuat tombol berbentuk bulat */
+    border: none; /* Menghilangkan border */
+    cursor: pointer;
+    background-size: 20px 20px; /* Ukuran ikon */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #4c7d9f;
+    background-image: url('images/edit.png'); /* Ikon untuk tombol edit */
+}    
+
+.edit-unit-button:hover { 
+    background-color: #3a477f;
+}
+    
+.edit-aset-button {
+    display: flex; /* Menggunakan flexbox untuk tata letak ikon */
+    align-items: center; /* Memposisikan ikon di tengah secara vertikal */
+    justify-content: center; /* Memposisikan ikon di tengah secara horizontal */
+    width: 40px; /* Lebar tombol */
+    height: 40px; /* Tinggi tombol */
+    border-radius: 50%; /* Membuat tombol berbentuk bulat */
+    border: none; /* Menghilangkan border */
+    cursor: pointer;
+    background-size: 20px 20px; /* Ukuran ikon */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #4c7d9f;
+    background-image: url('images/edit.png'); /* Ikon untuk tombol edit */
+}    
+
+.edit-aset-button:hover {
+    background-color: #3a477f;
+}
+    .btn-delete {
+      background-color: #d9534f;
+      background-image: url('images/trash.png'); /* Ikon untuk tombol hapus */
+    }
+    
+    .btn-delete:hover {
+      background-color: #c12e2a;
+    }
+    
+.delete-unit-button {
+    display: flex; /* Menggunakan flexbox untuk tata letak ikon */
+    align-items: center; /* Memposisikan ikon di tengah secara vertikal */
+    justify-content: center; /* Memposisikan ikon di tengah secara horizontal */
+    width: 40px; /* Lebar tombol */
+    height: 40px; /* Tinggi tombol */
+    border-radius: 50%; /* Membuat tombol berbentuk bulat */
+    border: none; /* Menghilangkan border */
+    cursor: pointer;
+    background-size: 20px 20px; /* Ukuran ikon */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #d9534f;
+    background-image: url('images/trash.png'); /* Ikon untuk tombol hapus */
+}
+
+.delete-unit-button:hover { 
+    background-color: #c12e2a;
+}
+
+.delete-department-button {
+    display: flex; /* Menggunakan flexbox untuk tata letak ikon */
+    align-items: center; /* Memposisikan ikon di tengah secara vertikal */
+    justify-content: center; /* Memposisikan ikon di tengah secara horizontal */
+    width: 40px; /* Lebar tombol */
+    height: 40px; /* Tinggi tombol */
+    border-radius: 50%; /* Membuat tombol berbentuk bulat */
+    border: none; /* Menghilangkan border */
+    cursor: pointer;
+    background-size: 20px 20px; /* Ukuran ikon */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #d9534f;
+    background-image: url('images/trash.png'); /* Ikon untuk tombol hapus */
+}
+
+.delete-department-button:hover { 
+    background-color: #c12e2a;
+}
+
+.delete-aset-button {
+    display: flex; /* Menggunakan flexbox untuk tata letak ikon */
+    align-items: center; /* Memposisikan ikon di tengah secara vertikal */
+    justify-content: center; /* Memposisikan ikon di tengah secara horizontal */
+    width: 40px; /* Lebar tombol */
+    height: 40px; /* Tinggi tombol */
+    border-radius: 50%; /* Membuat tombol berbentuk bulat */
+    border: none; /* Menghilangkan border */
+    cursor: pointer;
+    background-size: 20px 20px; /* Ukuran ikon */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #d9534f;
+    background-image: url('images/trash.png'); /* Ikon untuk tombol hapus */
+}
+
+.delete-aset-button:hover { 
+    background-color: #c12e2a;
+}
+
+    .btn-tambah-riwayat {
+      display: flex; /* Menggunakan flexbox untuk ikon */
+      align-items: center; /* Memusatkan ikon secara vertikal */
+      justify-content: center; /* Memusatkan ikon secara horizontal */
+      width: 40px; /* Lebar tombol */
+      height: 40px; /* Tinggi tombol */
+      border-radius: 50%; /* Membuat tombol berbentuk bulat */
+      border: none; /* Menghapus border */
+      cursor: pointer;
+      background-color: #4C9F98;
+      background-image: url('images/add.png'); /* Menyisipkan ikon */
+      background-size: 20px 20px; /* Mengatur ukuran ikon */
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    
+    .btn-tambah-riwayat:hover {
+      background-color: #3A7F79; /* Warna saat hover */
+    }    
+
+  .btn-tambah-aset {
+      display: flex; /* Menggunakan flexbox untuk ikon */
+      align-items: center; /* Memusatkan ikon secara vertikal */
+      justify-content: center; /* Memusatkan ikon secara horizontal */
+      width: 40px; /* Lebar tombol */
+      height: 40px; /* Tinggi tombol */
+      border-radius: 50%; /* Membuat tombol berbentuk bulat */
+      border: none; /* Menghapus border */
+      cursor: pointer;
+      background-color: #4C9F98;
+      background-image: url('images/add.png'); /* Menyisipkan ikon */
+      background-size: 20px 20px; /* Mengatur ukuran ikon */
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    
+    .btn-tambah-aset:hover {
+      background-color: #3A7F79; /* Warna saat hover */
+    }
+
+.btn-add-training {
+      display: flex; /* Menggunakan flexbox untuk ikon */
+      align-items: center; /* Memusatkan ikon secara vertikal */
+      justify-content: center; /* Memusatkan ikon secara horizontal */
+      width: 40px; /* Lebar tombol */
+      height: 40px; /* Tinggi tombol */
+      border-radius: 50%; /* Membuat tombol berbentuk bulat */
+      border: none; /* Menghapus border */
+      cursor: pointer;
+      background-color: #4C9F98;
+      background-image: url('images/add.png'); /* Menyisipkan ikon */
+      background-size: 20px 20px; /* Mengatur ukuran ikon */
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    
+    .btn-add-training:hover {
+      background-color: #3A7F79; /* Warna saat hover */
+    }
+
+.add-department-button {
+      display: flex; /* Menggunakan flexbox untuk ikon */
+      align-items: center; /* Memusatkan ikon secara vertikal */
+      justify-content: center; /* Memusatkan ikon secara horizontal */
+      width: 40px; /* Lebar tombol */
+      height: 40px; /* Tinggi tombol */
+      border-radius: 50%; /* Membuat tombol berbentuk bulat */
+      border: none; /* Menghapus border */
+      cursor: pointer;
+      background-color: #4C9F98;
+      background-image: url('images/add.png'); /* Menyisipkan ikon */
+      background-size: 20px 20px; /* Mengatur ukuran ikon */
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    
+    .add-department-button:hover {
+      background-color: #3A7F79; /* Warna saat hover */
+}    
+
+.add-aset-button {
+      display: flex; /* Menggunakan flexbox untuk ikon */
+      align-items: center; /* Memusatkan ikon secara vertikal */
+      justify-content: center; /* Memusatkan ikon secara horizontal */
+      width: 40px; /* Lebar tombol */
+      height: 40px; /* Tinggi tombol */
+      border-radius: 50%; /* Membuat tombol berbentuk bulat */
+      border: none; /* Menghapus border */
+      cursor: pointer;
+      background-color: #4C9F98;
+      background-image: url('images/add.png'); /* Menyisipkan ikon */
+      background-size: 20px 20px; /* Mengatur ukuran ikon */
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    
+    .add-aset-button:hover {
+      background-color: #3A7F79; /* Warna saat hover */
+}
+
+.btn-tambah-cuti {
+      display: flex; /* Menggunakan flexbox untuk ikon */
+      align-items: center; /* Memusatkan ikon secara vertikal */
+      justify-content: center; /* Memusatkan ikon secara horizontal */
+      width: 40px; /* Lebar tombol */
+      height: 40px; /* Tinggi tombol */
+      border-radius: 50%; /* Membuat tombol berbentuk bulat */
+      border: none; /* Menghapus border */
+      cursor: pointer;
+      background-color: #4C9F98;
+      background-image: url('images/add.png'); /* Menyisipkan ikon */
+      background-size: 20px 20px; /* Mengatur ukuran ikon */
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    
+    .btn-tambah-cuti:hover {
+      background-color: #3A7F79; /* Warna saat hover */
+}    
+
+    .btn-detail {
+      display: flex; /* Menggunakan flexbox untuk tata letak */
+      align-items: center; /* Memusatkan ikon secara vertikal */
+      justify-content: center; /* Memusatkan ikon secara horizontal */
+      width: 40px; /* Lebar tombol */
+      height: 40px; /* Tinggi tombol */
+      border-radius: 50%; /* Membuat tombol berbentuk bulat */
+      border: none; /* Menghapus border */
+      cursor: pointer;
+      background-color: #dd940b; /* Warna default tombol */
+      background-image: url('images/more.png'); /* Menambahkan ikon */
+      background-size: 20px 20px; /* Ukuran ikon */
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    
+    .btn-detail:hover {
+      background-color: #be7d28; /* Warna tombol saat hover */
+    }    
+
+    .detail-aset-button {
+      display: flex; /* Menggunakan flexbox untuk tata letak */
+      align-items: center; /* Memusatkan ikon secara vertikal */
+      justify-content: center; /* Memusatkan ikon secara horizontal */
+      width: 40px; /* Lebar tombol */
+      height: 40px; /* Tinggi tombol */
+      border-radius: 50%; /* Membuat tombol berbentuk bulat */
+      border: none; /* Menghapus border */
+      cursor: pointer;
+      background-color: #dd940b; /* Warna default tombol */
+      background-image: url('images/more.png'); /* Menambahkan ikon */
+      background-size: 20px 20px; /* Ukuran ikon */
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    
+    .detail-aset-button:hover {
+      background-color: #be7d28; /* Warna tombol saat hover */
+    }
+
+    .tabs {
+      display: flex;
+      border-bottom: 2px solid #ddd;
+    }
+    
+    .tab-button {
+      padding: 10px 20px;
+      background: #f4f4f4;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    
+    .tab-button.active {
+      background: #4C9F98;
+      color: white;
+      font-weight: bold;
+    }
+    
+    .tab-content {
+      display: none;
+      padding-top: 20px;
+    }
+    
+    .tab-content.active {
+      display: block;
+    }
+    
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 14px;
+    }
+    
+    th, td {
+      padding: 10px;
+      border: 1px solid #ddd;
+    }
+    
+    th {
+      background: #4C9F98;
+      color: white;
+    }
+    
+    tr:nth-child(even) {
+      background: #f9f9f9;
+    }
+    
+    /* Styling untuk card dan pie chart */
+.card {
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.2s;
+  background-color: #358881;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card h3 {
+  margin-bottom: 20px;
+  font-size: 18px;
+  color: white;
+}
+
+/* Styling untuk canvas pie chart */
+#sebaranStaffChart {
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+#statusKontrakChart + .legend li {
+  color: white !important;
+  font-size: 14px;
+}
+
+#sebaranStaffUnitChart + .legend li {
+  color: white !important;
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .card {
+    padding: 8px;
+  }
+
+  .card h3 {
+    font-size: 16px;
+  }
+
+  canvas {
+    width: 100% !important;
+    height: auto !important;
+  }
+}
+
+
+.chart {
+  display: block;
+  margin: 0 auto; /* Tengah-kan canvas */
+  max-width: 300px; /* Pastikan ukuran maksimal */
+  max-height: 300px; /* Sesuai dengan width dan height di HTML */
+}
+
+    /* Styling untuk tabel kontrak */
+    .tabel-kontrak {
+      margin-top: 20px;
+    }
+
+    .tabel-kontrak h3 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+
+    table thead {
+      background-color: #005f73;
+      color: #ffffff;
+    }
+
+    table th, table td {
+      border: 1px solid #ddd;
+      text-align: left;
+      padding: 8px;
+    }
+
+    table tbody tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+
+    table tbody tr:hover {
+      background-color: #d3d3d3;
+    }
+
+    .struktur-organisasi {
+      overflow-x: auto; /* Membuat tabel responsif */
+    }
+
+    .struktur-organisasi table {
+      font-size: 0.9rem;
+      min-width: 100px; /* Lebar minimal tabel */
+    }
+
+    td {
+      vertical-align: top; /* Menyelaraskan teks di bagian atas */
+      text-align: center; /* (Opsional) Sesuaikan dengan kebutuhan */
+    }
+    
+    table {
+      border-collapse: collapse; /* Menggabungkan border untuk tampilan rapi */
+      width: 100%; /* Tabel penuh */
+    }
+    
+    th, td {
+      border: 1px solid #ddd; /* Border tabel */
+      padding: 8px; /* Spasi di dalam sel */
+    }
+
+/* Kontainer cards khusus halaman datamaster.html */
+.datamaster-cards {
+  display: flex;              /* Gunakan flexbox untuk tata letak */
+  flex-wrap: wrap;            /* Agar card tetap responsif */
+  gap: 20px;                  /* Jarak antar card */
+  justify-content: center;    /* Pastikan card berada di tengah secara horizontal */
+  align-items: center;        /* Pastikan card sejajar secara vertikal */
+  min-height: 100vh;          /* Tinggi minimal sama dengan tinggi layar */
+  margin: 0;                  /* Hilangkan margin bawaan */
+  padding: 20px;              /* Tambahkan padding (opsional) */
+}
+
+/* Card */
+.datamaster-cards .card {
+  width: 290px;              /* Lebar tetap berbentuk kotak */
+  height: 80px;             /* Tinggi tetap berbentuk kotak */
+  background-color: #425C5A;  /* Warna latar belakang card */
+  color: #F3F3F3;            /* Warna teks */
+  display: flex;             /* Gunakan flexbox untuk konten di dalam card */
+  justify-content: center;   /* Pusatkan konten secara horizontal */
+  align-items: center;       /* Pusatkan konten secara vertikal */
+  border-radius: 25px;       /* Membuat sudut membulat */
+  text-align: center;        /* Pusatkan teks di dalam card */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Tambahkan bayangan */
+  font-size: 1.2em;          /* Perbesar ukuran font */
+  margin-bottom: 150px;       /* Jarak antar card */
+  margin-top: auto;
+}
+
+/* Tautan dalam card */
+.datamaster-cards .card a {
+  text-decoration: none;       /* Hilangkan garis bawah pada tautan */
+  color: inherit;              /* Warna teks mengikuti warna parent */
+  font-weight: bold;           /* (Opsional) Buat teks lebih tebal */
+}
+
+/* Atur urutan default card */
+.datamaster-cards .card {
+  order: 0; /* Semua card dimulai dengan urutan 0 */
+}
+
+/* Atur urutan card terakhir */
+.datamaster-cards .card-bottom {
+  order: 1; /* Card dengan kelas 'card-bottom' berada di urutan terakhir */
+}
+
+/* Responsivitas jika diperlukan */
+@media (min-width: 768px) {
+  .datamaster-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Pastikan tetap sejajar di tengah */
+  }
+}
+
+
+.pagination-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.pagination-arrow {
+  background-color: #28a745;
+  border: none;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.pagination-arrow:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.pagination-arrow:hover:not(:disabled) {
+  background-color: #218838;
+}
+
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.table-responsive table {
+  min-width: 1200px;
+  width: max-content;
+}
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 1100;
+}
+
+.hamburger div {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+}
+
+/* Sidebar (default: hidden offscreen) */
+.sidebar {
+  display: none; /* desktop default: tidak tampil */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 260px;
+  height: 100%;
+  background-color: #425C5A;
+  color: white;
+  padding: 20px;
+  flex-direction: column;
+  gap: 15px;
+  transform: translateX(-100%);  /* benar-benar sembunyi */
+  transition: transform 0.3s ease;
+  z-index: 1000;
+}
+
+.sidebar.active {
+  transform: translateX(0); /* tampil penuh saat aktif */
+}
+
+.sidebar-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.sidebar-header img {
+  height: 60px;
+}
+
+.sidebar-header h3 {
+  font-size: 14px;
+  margin: 5px 0;
+  color: white;
+}
+
+.sidebar-item {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 10px 0;
+  border-bottom: 1px solid #ffffff33;
+}
+
+.sidebar-item:hover {
+  color: #4C9F98;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    display: flex;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .navbar-menu,
+  .navbar-user {
+    display: none !important;
+  }
+}
+
+#search-container {
+  display: flex !important; /* pastikan tampil */
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+#search-container input,
+#search-container select,
+#search-container button {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+#search-container button {
+  background-color: #4C9F98;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+#search-container button:hover {
+  background-color: #3B8B87;
+}
+
+/* Responsive untuk mobile */
+@media (max-width: 768px) {
+  #search-container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  #search-container input,
+  #search-container select,
+  #search-container button {
+    width: 100%;
+  }
+}
+
+/* Perbaikan tampilan logout agar tidak terlalu ke bawah dan ikon terlihat */
+.sidebar-logout {
+  margin-top: 40px; /* dari auto jadi nilai tetap */
+  border-top: 1px solid #ffffff33;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+/* Ikon logout tampil lebih jelas */
+.sidebar-logout .logout-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.sidebar-logout .logout-link:hover {
+  color: #3B8B87;
+}
+
+.sidebar-logout .dropdown-icon {
+  filter: brightness(10); /* Mencerahkan ikon PNG yang gelap */
+  width: 20px;
+  height: 20px;
+}
+
+#data-cuti .table-responsive {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+#data-cuti .table-responsive table {
+  min-width: 1200px;
+  width: max-content;
+}
+
+.datamaster-cards .row {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 20px;     /* Awalnya 80px → diperkecil */
+  margin-bottom: 10px;  /* Juga diperkecil */
+  flex-wrap: wrap;
+}
+
+.datamaster-cards .row.center {
+  justify-content: center;
+}
+
+.datamaster-cards .card {
+  width: min(25vw, 160px);
+  aspect-ratio: 1 / 1;
+  background-color: #425C5A;
+  color: #F3F3F3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 25px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  font-size: 1em;
+  font-weight: bold;
+  transition: transform 0.2s ease;
+  padding: 10px;
+  text-decoration: none;
+}
+
+/* Responsif mobile */
+@media (max-width: 600px) {
+  .datamaster-cards .card {
+    width: 35vw;
+    font-size: 0.85em;
+  }
+}
+
+@media (max-width: 768px) {
+  .cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Pusatkan semua card */
+    gap: 20px;
+  }
+
+  .card {
+    width: 80%; /* Tidak 100%, agar tidak dempet */
+    margin: 0 auto;
+    margin-top: 20px;
+  }
+
+  .chart {
+    max-width: 100%;
+    height: auto !important;
+  }
+}

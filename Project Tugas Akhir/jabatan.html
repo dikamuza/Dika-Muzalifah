@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistem Informasi Karyawan</title>
+  <link rel="icon" type="image/x-icon" href="./assets/images/logoinovasi.png">
+  <link rel="stylesheet" href="assets/dashboard.css">
+  <style>
+    /* Styling tambahan untuk tabel */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    table thead {
+      background-color: #005f73;
+      color: #ffffff;
+    }
+
+    table th, table td {
+      border: 1px solid #ddd;
+      text-align: left;
+      padding: 8px;
+    }
+
+    table tbody tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+
+    table tbody tr:hover {
+      background-color: #d3d3d3;
+    }
+
+    .struktur-organisasi {
+      overflow-x: auto; /* Supaya tabel responsif */
+    }
+
+    .struktur-organisasi table {
+      font-size: 0.9rem;
+    }
+        /* New CSS styles for the table layout */
+        .jabatan-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    .jabatan-table th, .jabatan-table td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: left;
+    }
+
+    .jabatan-table th {
+      background-color: #005f73;
+      color: white;
+    }
+
+    .jabatan-table tbody tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    /* Responsive table */
+    .jabatan-table {
+      overflow-x: auto;
+    }
+  </style>
+</head>
+<body>
+
+        <!-- Navbar -->
+      <nav class="navbar">
+          <div class="navbar-logo">
+              <img src="assets/images/logoinovasi.png" alt="Logo Inovasi Digital">
+              <div class="navbar-title">
+                  <h3>SISTEM INFORMASI</h3>
+                  <h3>KARYAWAN</h3>
+                  <h3>INOVASI DIGITAL</h3>
+              </div>
+          </div>
+          <div class="navbar-menu">
+              <a href="dashboard.html" class="navbar-item">Dashboard</a>
+              <a href="datamaster.html" class="navbar-item">Data Master</a>
+              <a href="datastaff.html" class="navbar-item">Data Staff</a>
+              <a href="datahuka.html" class="navbar-item">Data Hubungan Kerja</a>
+              <a href="datacuti.html" class="navbar-item">Data Cuti</a>
+          </div>
+          <div class="navbar-user">
+            <img src="assets/images/logout (1).png" alt="User Icon" class="user-icon" id="userDropdownBtn">
+            <div class="dropdown-menu" id="userDropdown">
+              <a href="#" class="dropdown-item" id="logoutBtn">
+                <img src="assets/images/logout.png" alt="Logout Icon" class="dropdown-icon">
+                Logout
+              </a>
+            </div>
+          </div>
+      </nav>
+
+        <!-- Hamburger & Sidebar (mobile) -->
+  <div class="hamburger" onclick="toggleSidebar()">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+
+  <div class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <img src="assets/images/logoinovasi.png" alt="Logo Inovasi Digital" />
+      <h3>SISTEM INFORMASI</h3>
+      <h3>KARYAWAN</h3>
+      <h3>INOVASI DIGITAL</h3>
+    </div>
+    <a href="dashboard.html" class="sidebar-item">Dashboard</a>
+    <a href="datamaster.html" class="sidebar-item">Data Master</a>
+    <a href="datastaff.html" class="sidebar-item">Data Staff</a>
+    <a href="datahuka.html" class="sidebar-item">Data Hubungan Kerja</a>
+    <a href="datacuti.html" class="sidebar-item">Data Cuti</a>
+
+    <div class="sidebar-logout">
+      <a href="#" class="logout-link" id="logoutBtnSidebar">
+        <img src="assets/images/logout.png" class="dropdown-icon" /> Logout
+      </a>
+    </div>
+  </div>
+
+  <div class="container">
+    <!-- Main content -->
+    <main class="dashboard">
+      <header>
+        <h1>
+          Database HR
+          <a href="datamaster.html" style="text-decoration: none; color: inherit;">/ Data Master</a>
+          <a href="jabatan.html" style="text-decoration: none; color: #4C9F98;">/ Posisi/Jabatan</a>
+        </h1>        
+      </header>
+      
+      <div style="display: flex; justify-content: flex-end; margin-bottom: 10px;">
+        <button id="addRowButton" class="btn btn-primary">Tambah Data</button>
+      </div>
+
+      <!-- Tempat tabel struktur organisasi -->
+      <div class="jabatan">
+        <table id="jabatan-table">
+          <thead>
+            <tr>
+              <th>Nama Jabatan</th>
+              <th>Level Jabatan</th>
+              <th>Aksi</th>
+            </tr>
+          </thead>
+          <tbody id="jabatan-body">
+            <!-- Data akan dimuat di sini melalui struktur.js -->
+          </tbody>
+        </table>
+        <div id="pagination-jabatan"></div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Scripts -->
+  <script>
+    function toggleSidebar() {
+      document.getElementById('sidebar').classList.toggle('active');
+    }
+
+    const userBtn = document.getElementById('userDropdownBtn');
+    const dropdown = document.getElementById('userDropdown');
+
+    userBtn.addEventListener('click', () => {
+      dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+    });
+
+    document.addEventListener('click', function (event) {
+      if (!userBtn.contains(event.target) && !dropdown.contains(event.target)) {
+        dropdown.style.display = 'none';
+      }
+    });
+
+    function handleLogout() {
+      alert('Logout berhasil!');
+      window.location.href = 'index.html';
+    }
+    document.getElementById('logoutBtn')?.addEventListener('click', handleLogout);
+    document.getElementById('logoutBtnSidebar')?.addEventListener('click', handleLogout);
+  </script>
+
+  <script src="assets/navbar.js"></script>
+  <script type="module" src="assets/jabatan.js"></script>
+</body>
+</html>
